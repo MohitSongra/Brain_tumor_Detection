@@ -1,0 +1,12 @@
+{
+  "surface": "local Streamlit classifier",
+  "mode": "operate",
+  "tokens": {
+    "primary": "#14786F",
+    "background": "#FFFFFF",
+    "secondaryBackground": "#F3F6F6",
+    "text": "#192D35",
+    "font": "sans serif"
+  },
+  "authority": "User-approved implementation plan: restrained native Streamlit interface"
+}

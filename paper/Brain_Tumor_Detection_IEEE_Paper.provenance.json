@@ -1,0 +1,43 @@
+{
+  "created_at_utc": "2026-09-25T14:46:23.982755+00:00",
+  "preview": false,
+  "template_sha256": "57e2125b0a04860e103fd634c2b5fd19a7ea571fa59ac577bd97afc73ad99482",
+  "output_sha256": "f4ff6b81be60b632f305994f9f25433f028c5f8193cf7a3f7f9a21cafe436eaa",
+  "preserve_only_parts": {
+    "_rels/.rels": "2043a974103d132b7358365752b2861f49dcc0a95f0edce629fbb536a94a037f",
+    "word/footnotes.xml": "570e8328eeefe407e3dfce54f17e04c0544057e617121490a29351e4069ed7e5",
+    "word/endnotes.xml": "4bb6e32fa217bbb58b067a38ecc8f56a9494cdb0d8346b4013dc160b9e59807f",
+    "word/theme/theme1.xml": "6ffe7c7938f6233e0b06600f7cc99a05f737a9ca9f78fedb0b3767b42fa3c43b",
+    "word/settings.xml": "9a8a50e60ba2cef69b9ed27769cd8c11ad0f653ee1150130a62fb10a6b131a81",
+    "customXml/item1.xml": "c8092edbb672f8c93f1d5ef66539a6f169462ba8738b785b59cc5d96f4aca59a",
+    "customXml/itemProps1.xml": "c2ab44e98c5f295b4aeab11413d54866a4e35cea32a5c2a626504b037ac9c777",
+    "word/numbering.xml": "00efff8ca74d5288653f39b341966ef3a9dc4e95adf5486e150b48258ecf7e11",
+    "word/styles.xml": "507c415cb99a1b99756a6f128a25237615048632c0d3c15f3306885d58610eee",
+    "word/webSettings.xml": "242b831884e8b91567d301a2a6ee3bae4803b30d2a2427a02b405f4d1405e378",
+    "word/fontTable.xml": "4681159be174defbf053ffb8376de73f139f520d839dcf731d23d41af0d58611",
+    "customXml/_rels/item1.xml.rels": "4831d1fdf56c0f3fe45545260bc6787792fc4f5bb657104f421297079159c313"
+  },
+  "measured_source_files": {
+    "data/processed/audit.json": "231a0285807a692502e57cbb0e29c3b95a095982e3f72d1c7c539ec0a37684a1",
+    "results\\evaluation\\custom_cnn\\metrics.json": "f6eb6c717c374f518f5de2980861a4f0c6e200838f7f10afeca363b16bdd4f34",
+    "results\\training\\custom_cnn\\run.json": "abbc978caf6c726866a27d0bfb3f3cd0cba0c94238681dd9768c4717e8a2a7db",
+    "results\\evaluation\\efficientnet\\metrics.json": "238eb3cbc333e02401521f56402743de66a7d4bd02f591d29eea0978ab2354ae",
+    "results\\training\\efficientnet\\run.json": "de581e93263919c34f67466d4affee467cc7b643a791054191eacb34cb646222",
+    "results\\evaluation\\mobilenet\\metrics.json": "6098b7c58be51190e7a15458a17b9951e2e613a51d8caf4c3d2cfa5206acf88c",
+    "results\\training\\mobilenet\\run.json": "86cdb7fce997087751c826183bc8079cc4e113e18b5c73bf9035550b24fbe597",
+    "results\\training\\mobilenet\\history.json": "3ed64828f6032b86e006203b451136f1925893b6fcf73208060ab4c418c6a59d"
+  },
+  "section_count": 4,
+  "native_table_count": 5,
+  "figure_count": 2,
+  "authors": [
+    "Mohit Singh",
+    "Rudra Dalvi",
+    "Sameed Mulla",
+    "Adarsh Yadav"
+  ],
+  "author_count": 4,
+  "author_layout": "Two rows of two native Word columns",
+  "author_placeholders_intentional": false,
+  "manuscript_source_sha256": "3e9b5149682bfca961df3b291d10c9ad410f23f709673c6c7a2e172224285f5f"
+}

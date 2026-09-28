@@ -1,0 +1,27 @@
+{
+  "source_files": {
+    "custom_cnn": {
+      "results\\evaluation\\custom_cnn\\metrics.json": "f6eb6c717c374f518f5de2980861a4f0c6e200838f7f10afeca363b16bdd4f34",
+      "results\\evaluation\\custom_cnn\\predictions.csv": "d9920154576706cc4fa5f4847b855dac0e67ff06799ba455c6eee21792964086",
+      "results\\training\\custom_cnn\\history.json": "d86e8a7473b99fb08489954af6609236131e611bc9e6a4e70cc2ae17c66bcf3f"
+    },
+    "efficientnet": {
+      "results\\evaluation\\efficientnet\\metrics.json": "238eb3cbc333e02401521f56402743de66a7d4bd02f591d29eea0978ab2354ae",
+      "results\\evaluation\\efficientnet\\predictions.csv": "10254ecf19c9cc5bc33fc3a90563c57d3ab69a9b98f03fd14a367e195d3ecbf0",
+      "results\\training\\efficientnet\\history.json": "133f5e299dab943edf7392e8236be8b5d2204a7f5489590fa98673bbaa0975e4"
+    },
+    "mobilenet": {
+      "results\\evaluation\\mobilenet\\metrics.json": "6098b7c58be51190e7a15458a17b9951e2e613a51d8caf4c3d2cfa5206acf88c",
+      "results\\evaluation\\mobilenet\\predictions.csv": "58045a273dbe5d561bd29b792438be250626715fec51e44ec4494e2b93f26e6a",
+      "results\\training\\mobilenet\\history.json": "3ed64828f6032b86e006203b451136f1925893b6fcf73208060ab4c418c6a59d"
+    }
+  },
+  "figure_sha256": {
+    "roc_comparison.png": "82c985a1199eb046ea2ca51111399b3831355e9a2bd193fc51c47ddf567c8cfc",
+    "validation_history.png": "da1e839a590a88673d76a516c8d8123396aa890714618d5cdf4cc0de8c43d128"
+  },
+  "dataset_fingerprint": "7cbfdfaf4cb792140f3144366a6f56b31d0d1ecd8a866e6d4749dd874927715a",
+  "test_images": 1476,
+  "all_reported_metrics_recomputed_from_saved_predictions": true,
+  "figure_data": "Original measured predictions and histories; no smoothing or simulated values."
+}
