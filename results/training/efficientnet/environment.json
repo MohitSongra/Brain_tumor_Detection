@@ -1,0 +1,11 @@
+{
+  "python": "3.11.15",
+  "tensorflow": "2.20.0",
+  "keras": "3.12.4",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "processor": "AMD64 Family 25 Model 117 Stepping 2, AuthenticAMD",
+  "device": "cpu",
+  "gpu_devices": [],
+  "batch_size": 8,
+  "random_seed": 42
+}

@@ -1,0 +1,2 @@
+{"phase": "head", "epoch": 1, "seconds": 11.92253849998815, "accuracy": 0.625, "auc": 0.15217390656471252, "loss": 0.4926752746105194, "val_accuracy": 0.0, "val_auc": 0.0, "val_loss": 0.7018402218818665, "learning_rate": 0.0010000000474974513}
+{"phase": "finetune", "epoch": 1, "seconds": 12.787090700003318, "accuracy": 0.875, "auc": 0.5, "loss": 0.6846723556518555, "val_accuracy": 0.0, "val_auc": 0.0, "val_loss": 0.7018238306045532, "learning_rate": 9.999999747378752e-06}

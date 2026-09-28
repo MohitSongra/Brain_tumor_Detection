@@ -1,0 +1,16 @@
+{
+  "evaluated_at_utc": "2026-09-21T17:36:39.213272+00:00",
+  "model_name": "custom_cnn",
+  "model_path": "models/saved/custom_cnn/best_model.keras",
+  "model_sha256": "9c6468e9dbc1aae2cc497f7d799e2dc4c293787c560e00679fd40631f5b2161d",
+  "dataset_fingerprint": "7cbfdfaf4cb792140f3144366a6f56b31d0d1ecd8a866e6d4749dd874927715a",
+  "trained_on_real_data": true,
+  "evaluation_split": "test",
+  "threshold_source": "configuration, fixed independently of test predictions",
+  "image_size": 224,
+  "input_range": [
+    0,
+    255
+  ],
+  "tensorflow_version": "2.20.0"
+}

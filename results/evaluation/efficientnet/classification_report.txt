@@ -1,0 +1,4 @@
+          precision  recall  specificity     f1  roc_auc  support
+class                                                            
+no_tumor     0.8082  0.9900       0.9126 0.8899   0.9850      400
+tumor        0.9959  0.9126       0.9900 0.9525   0.9850     1076

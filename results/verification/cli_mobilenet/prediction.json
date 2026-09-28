@@ -1,0 +1,15 @@
+{
+  "class_name": "no_tumor",
+  "class_index": 0,
+  "confidence": 0.9976663265842944,
+  "probabilities": [
+    0.9976663265842944,
+    0.0023336734157055616
+  ],
+  "threshold": 0.5,
+  "image": "C:\\Users\\mohit\\Documents\\GitHub\\Brain_tumorˍDetection\\data\\test\\no_tumor\\notumor__Te-no_100__c62ea2526aa7.jpg",
+  "class_names": [
+    "no_tumor",
+    "tumor"
+  ]
+}

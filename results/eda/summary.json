@@ -1,0 +1,41 @@
+{
+  "total_images": 5608,
+  "source_classes": {
+    "glioma": 1666,
+    "pituitary": 1597,
+    "meningioma": 1411,
+    "notumor": 934
+  },
+  "output_classes": {
+    "tumor": 4674,
+    "no_tumor": 934
+  },
+  "split_counts": {
+    "train": 3320,
+    "test": 1476,
+    "validation": 812
+  },
+  "split_class_counts": {
+    "train": {
+      "no_tumor": 427,
+      "tumor": 2893
+    },
+    "validation": {
+      "no_tumor": 107,
+      "tumor": 705
+    },
+    "test": {
+      "no_tumor": 400,
+      "tumor": 1076
+    }
+  },
+  "plots": {
+    "class_distribution": "C:\\Users\\mohit\\Documents\\GitHub\\Brain_tumorˍDetection\\results\\eda\\class_distribution.png",
+    "sample_mri_grid": "C:\\Users\\mohit\\Documents\\GitHub\\Brain_tumorˍDetection\\results\\eda\\sample_mri_grid.png",
+    "image_dimensions": "C:\\Users\\mohit\\Documents\\GitHub\\Brain_tumorˍDetection\\results\\eda\\image_dimensions.png",
+    "pixel_intensity": "C:\\Users\\mohit\\Documents\\GitHub\\Brain_tumorˍDetection\\results\\eda\\pixel_intensity.png",
+    "augmentation_examples": "C:\\Users\\mohit\\Documents\\GitHub\\Brain_tumorˍDetection\\results\\eda\\augmentation_examples.png"
+  },
+  "intensity_histogram_sample_size": 200,
+  "note": "Representative images, intensity histograms, and augmentations use training data only."
+}

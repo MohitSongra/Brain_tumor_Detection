@@ -1,0 +1,1 @@
+{"phase": "baseline", "epoch": 1, "seconds": 3.795851800008677, "accuracy": 0.7083333134651184, "auc": 0.0, "loss": 0.6454624533653259, "val_accuracy": 0.0, "val_auc": 0.0, "val_loss": 0.7141789197921753, "learning_rate": 0.0010000000474974513}

@@ -1,0 +1,8 @@
+{
+  "archive_sha256": "882817250048c78ef7a759cf23e540d7b581f2327b16663c9d3db12f5d2ffdb4",
+  "archive": "data/raw/nickparvar_v2.zip",
+  "source_url": "https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset",
+  "download_url": "https://www.kaggle.com/api/v1/datasets/download/masoudnickparvar/brain-tumor-mri-dataset?datasetVersionNumber=2",
+  "dataset_version": 2,
+  "license": "CC BY 4.0 (publisher metadata; see DATASET.md)"
+}

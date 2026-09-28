@@ -1,0 +1,87 @@
+{
+  "accuracy": 0.9288617886178862,
+  "precision": 0.9889224572004028,
+  "recall": 0.912639405204461,
+  "sensitivity": 0.912639405204461,
+  "specificity": 0.9725,
+  "f1": 0.9492508458192364,
+  "roc_auc": 0.9820120817843865,
+  "task": "binary",
+  "class_names": [
+    "no_tumor",
+    "tumor"
+  ],
+  "threshold": 0.5,
+  "n_samples": 1476,
+  "positive_class": "tumor",
+  "averaging": "positive_class",
+  "per_class": {
+    "no_tumor": {
+      "precision": 0.8053830227743272,
+      "recall": 0.9725,
+      "sensitivity": 0.9725,
+      "specificity": 0.912639405204461,
+      "f1": 0.8810872027180068,
+      "roc_auc": 0.9820120817843866,
+      "support": 400,
+      "tp": 389,
+      "tn": 982,
+      "fp": 94,
+      "fn": 11
+    },
+    "tumor": {
+      "precision": 0.9889224572004028,
+      "recall": 0.912639405204461,
+      "sensitivity": 0.912639405204461,
+      "specificity": 0.9725,
+      "f1": 0.9492508458192364,
+      "roc_auc": 0.9820120817843865,
+      "support": 1076,
+      "tp": 982,
+      "tn": 389,
+      "fp": 11,
+      "fn": 94
+    }
+  },
+  "macro": {
+    "precision": 0.897152739987365,
+    "recall": 0.9425697026022305,
+    "sensitivity": 0.9425697026022305,
+    "specificity": 0.9425697026022305,
+    "f1": 0.9151690242686216,
+    "roc_auc": 0.9820120817843865
+  },
+  "weighted": {
+    "precision": 0.939182773074095,
+    "recall": 0.9288617886178862,
+    "sensitivity": 0.9288617886178862,
+    "specificity": 0.9562776165865748,
+    "f1": 0.9307783138134831,
+    "roc_auc": 0.9820120817843865
+  },
+  "confusion_matrix": [
+    [
+      389,
+      11
+    ],
+    [
+      94,
+      982
+    ]
+  ],
+  "undefined_metric_policy": "null; macro is null if any class is undefined; weighted ignores only zero-support classes",
+  "evaluated_at_utc": "2026-09-24T06:11:14.609467+00:00",
+  "model_name": "mobilenet",
+  "model_path": "models/saved/mobilenet/best_model.keras",
+  "model_sha256": "dcb4c3a87d34cd8e5bc851055491bb1a35ed998d488e4e4c44cec4242e12f8e4",
+  "dataset_fingerprint": "7cbfdfaf4cb792140f3144366a6f56b31d0d1ecd8a866e6d4749dd874927715a",
+  "trained_on_real_data": true,
+  "evaluation_split": "test",
+  "threshold_source": "configuration, fixed independently of test predictions",
+  "image_size": 224,
+  "input_range": [
+    0,
+    255
+  ],
+  "tensorflow_version": "2.20.0"
+}

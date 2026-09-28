@@ -1,0 +1,9 @@
+{
+  "batch_seconds": [
+    2.1141465000109747,
+    0.24847380000574049,
+    0.24824419998913072
+  ],
+  "estimated_training_seconds_per_epoch": 103.06898499893578,
+  "excludes_validation_and_finetuning": true
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "notebook": "01_EDA.ipynb",
+    "source_sha256": "86c4d52f5b75c7ac37f0f47ad0750ce265558666a6a089873cf636fcafd96bf5",
+    "python": "C:\\Users\\mohit\\Documents\\GitHub\\Brain_tumor\u02cdDetection\\.venv\\Scripts\\python.exe",
+    "status": "passed",
+    "seconds": 18.186,
+    "executed_at_utc": "2026-09-24T06:12:18.536095+00:00"
+  },
+  {
+    "notebook": "02_Model_Analysis.ipynb",
+    "source_sha256": "7852976a1fe0a8b02368e4ed708ccf755738677481a3439580caa8877c47f8f7",
+    "python": "C:\\Users\\mohit\\Documents\\GitHub\\Brain_tumor\u02cdDetection\\.venv\\Scripts\\python.exe",
+    "status": "passed",
+    "seconds": 2.749,
+    "executed_at_utc": "2026-09-24T06:12:21.322889+00:00"
+  }
+]

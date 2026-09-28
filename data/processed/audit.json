@@ -1,0 +1,65 @@
+{
+  "perceptual_hash": "64-bit DCT",
+  "phash_distance": 4,
+  "candidate_pairs": 5783,
+  "candidate_group_count": 4664,
+  "largest_candidate_group": 28,
+  "exact_duplicates_removed": 314,
+  "development_overlapping_test_removed": 1075,
+  "patient_mapping_available": false,
+  "limitations": [
+    "Perceptual similarity identifies candidates, not verified shared patients.",
+    "Without patient metadata, patient-level independence cannot be established.",
+    "Explicit augmentation markers are excluded; unmarked transformations may remain."
+  ],
+  "status": "passed",
+  "source": "data/raw/nickparvar_v2",
+  "layout": "official",
+  "task": "binary",
+  "total_inspected": 7200,
+  "included": 5608,
+  "excluded": 1592,
+  "exclusion_counts": {
+    "exact_duplicate_of": 314,
+    "explicit_augmentation_marker": 203,
+    "development_group_overlaps_official_test": 1075
+  },
+  "split_class_counts": {
+    "test": {
+      "glioma": 383,
+      "meningioma": 293,
+      "notumor": 400,
+      "pituitary": 400
+    },
+    "train": {
+      "glioma": 1029,
+      "meningioma": 898,
+      "notumor": 427,
+      "pituitary": 966
+    },
+    "validation": {
+      "glioma": 254,
+      "meningioma": 220,
+      "notumor": 107,
+      "pituitary": 231
+    }
+  },
+  "class_names": [
+    "no_tumor",
+    "tumor"
+  ],
+  "dataset_fingerprint": "7cbfdfaf4cb792140f3144366a6f56b31d0d1ecd8a866e6d4749dd874927715a",
+  "random_seed": 42,
+  "cross_split_byte_duplicates": 0,
+  "cross_split_pixel_duplicates": 0,
+  "cross_split_candidate_groups": 0,
+  "download_provenance": {
+    "archive_sha256": "882817250048c78ef7a759cf23e540d7b581f2327b16663c9d3db12f5d2ffdb4",
+    "archive": "data/raw/nickparvar_v2.zip",
+    "source_url": "https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset",
+    "download_url": "https://www.kaggle.com/api/v1/datasets/download/masoudnickparvar/brain-tumor-mri-dataset?datasetVersionNumber=2",
+    "dataset_version": 2,
+    "license": "CC BY 4.0 (publisher metadata; see DATASET.md)"
+  },
+  "split_signature": "35516cc5ac02d5077acdc384131b524218dff6890eab17515bfd0ac8db4923a5"
+}

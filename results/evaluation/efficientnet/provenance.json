@@ -1,0 +1,16 @@
+{
+  "evaluated_at_utc": "2026-09-21T18:18:58.510112+00:00",
+  "model_name": "efficientnet",
+  "model_path": "models/saved/best_model.keras",
+  "model_sha256": "0281f01718b16ba39be696d4c3ab3dadab461195698acd74cfc4f973b8dd64f8",
+  "dataset_fingerprint": "7cbfdfaf4cb792140f3144366a6f56b31d0d1ecd8a866e6d4749dd874927715a",
+  "trained_on_real_data": true,
+  "evaluation_split": "test",
+  "threshold_source": "configuration, fixed independently of test predictions",
+  "image_size": 224,
+  "input_range": [
+    0,
+    255
+  ],
+  "tensorflow_version": "2.20.0"
+}

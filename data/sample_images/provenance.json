@@ -1,0 +1,15 @@
+{
+  "dataset": "Masoud Nickparvar's Brain Tumor MRI Dataset",
+  "version": 2,
+  "source": "https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset",
+  "archive_sha256": "882817250048c78ef7a759cf23e540d7b581f2327b16663c9d3db12f5d2ffdb4",
+  "manifest_sha256": "7cbfdfaf4cb792140f3144366a6f56b31d0d1ecd8a866e6d4749dd874927715a",
+  "model_sha256": "0281f01718b16ba39be696d4c3ab3dadab461195698acd74cfc4f973b8dd64f8",
+  "evaluation_timestamp": "2026-09-21T18:18:58.510112+00:00",
+  "threshold": 0.5,
+  "random_seed": 42,
+  "regular_samples": 12,
+  "known_mistakes": 2,
+  "selection": "Stratified sampling without consulting predictions: 6 notumor and 2 of each tumor subtype. Two additional errors selected explicitly from saved test evaluation.",
+  "files_copied_without_image_modification": true
+}

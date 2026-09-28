@@ -1,0 +1,22 @@
+{
+  "date": "2026-09-21",
+  "url": "http://127.0.0.1:8501",
+  "real_model_prediction": "passed",
+  "image": "data/test/no_tumor/notumor__Te-no_1__dc8a25950f07.jpg",
+  "displayed_class": "No Tumor",
+  "displayed_confidence": "100.00%",
+  "cli_display_agreement": true,
+  "cli_record": "results/verification/browser_example/prediction.json",
+  "gradcam_original_heatmap_overlay": "visually inspected",
+  "invalid_upload_clears_results": true,
+  "invalid_upload_disables_prediction": true,
+  "valid_upload_recovers": true,
+  "missing_model_state": "passed before training",
+  "disclaimer_present": true,
+  "desktop_css_viewport": [875, 705],
+  "mobile_requested_viewport": [390, 844],
+  "mobile_observed_css_viewport": [394, 852],
+  "horizontal_overflow": false,
+  "mobile_columns_stack": true,
+  "viewport_reset": true
+}

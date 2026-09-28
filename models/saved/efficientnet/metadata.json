@@ -1,0 +1,38 @@
+{
+  "task": "binary",
+  "class_names": [
+    "no_tumor",
+    "tumor"
+  ],
+  "image_size": 224,
+  "input_range": [
+    0,
+    255
+  ],
+  "threshold": 0.5,
+  "model_name": "efficientnet",
+  "gradcam_layer": "gradcam_features",
+  "dataset_fingerprint": "7cbfdfaf4cb792140f3144366a6f56b31d0d1ecd8a866e6d4749dd874927715a",
+  "trained_on_real_data": true,
+  "created_utc": "20260921T170817",
+  "selected_phase": "finetune",
+  "selected_val_loss": 0.05251859128475189,
+  "selected_epoch": 7,
+  "total_epochs": 22,
+  "training_seconds": 3599.150890799996,
+  "class_weights": {
+    "0": 3.8875878220140514,
+    "1": 0.5737988247493951
+  },
+  "runtime": {
+    "python": "3.11.15",
+    "tensorflow": "2.20.0",
+    "keras": "3.12.4",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "processor": "AMD64 Family 25 Model 117 Stepping 2, AuthenticAMD",
+    "device": "cpu",
+    "gpu_devices": [],
+    "batch_size": 8,
+    "random_seed": 42
+  }
+}

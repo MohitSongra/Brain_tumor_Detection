@@ -1,0 +1,21 @@
+{
+  "class_name": "no_tumor",
+  "class_index": 0,
+  "confidence": 0.9999592371823383,
+  "probabilities": [
+    0.9999592371823383,
+    4.076281766174361e-05
+  ],
+  "threshold": 0.5,
+  "image": "C:\\Users\\mohit\\Documents\\GitHub\\Brain_tumorˍDetection\\data\\test\\no_tumor\\notumor__Te-no_1__dc8a25950f07.jpg",
+  "class_names": [
+    "no_tumor",
+    "tumor"
+  ],
+  "gradcam": {
+    "original": "C:\\Users\\mohit\\Documents\\GitHub\\Brain_tumorˍDetection\\results\\verification\\browser_example\\original.png",
+    "heatmap": "C:\\Users\\mohit\\Documents\\GitHub\\Brain_tumorˍDetection\\results\\verification\\browser_example\\heatmap.png",
+    "overlay": "C:\\Users\\mohit\\Documents\\GitHub\\Brain_tumorˍDetection\\results\\verification\\browser_example\\overlay.png",
+    "combined": "C:\\Users\\mohit\\Documents\\GitHub\\Brain_tumorˍDetection\\results\\verification\\browser_example\\combined.png"
+  }
+}

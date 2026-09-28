@@ -8,14 +8,6 @@ __pycache__/
 .env.*
 !.env.example
 .streamlit/secrets.toml
-data/**
-!data/**/
-!data/**/.gitkeep
-models/saved/**
-!models/saved/.gitkeep
-results/**
-!results/**/
-!results/**/.gitkeep
 *.log
 .impeccable/review/
 paper/build/

@@ -1,0 +1,56 @@
+{
+  "task": "binary",
+  "class_names": [
+    "no_tumor",
+    "tumor"
+  ],
+  "image_size": 224,
+  "input_range": [
+    0,
+    255
+  ],
+  "threshold": 0.5,
+  "model_name": "efficientnet",
+  "gradcam_layer": "gradcam_features",
+  "dataset_fingerprint": "7cbfdfaf4cb792140f3144366a6f56b31d0d1ecd8a866e6d4749dd874927715a",
+  "trained_on_real_data": false,
+  "created_utc": "20260921T170615",
+  "selected_phase": "finetune",
+  "selected_val_loss": 0.7014169692993164,
+  "selected_epoch": 1,
+  "total_epochs": 2,
+  "training_seconds": 52.178132000000915,
+  "class_weights": {
+    "0": 3.8875878220140514,
+    "1": 0.5737988247493951
+  },
+  "runtime": {
+    "python": "3.11.15",
+    "tensorflow": "2.20.0",
+    "keras": "3.12.4",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "processor": "AMD64 Family 25 Model 117 Stepping 2, AuthenticAMD",
+    "device": "cpu",
+    "gpu_devices": [],
+    "batch_size": 8,
+    "random_seed": 42
+  },
+  "phases": [
+    {
+      "phase": "head",
+      "best_val_loss": 0.7014399766921997,
+      "best_epoch": 1,
+      "epochs_run": 1,
+      "seconds": 22.706990200007567,
+      "stopping_reason": "epoch_limit"
+    },
+    {
+      "phase": "finetune",
+      "best_val_loss": 0.7014169692993164,
+      "best_epoch": 1,
+      "epochs_run": 1,
+      "seconds": 26.774680899994564,
+      "stopping_reason": "epoch_limit"
+    }
+  ]
+}
