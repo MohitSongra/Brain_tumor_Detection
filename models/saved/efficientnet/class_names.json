@@ -1,4 +1,6 @@
 [
-  "no_tumor",
-  "tumor"
+  "glioma",
+  "meningioma",
+  "notumor",
+  "pituitary"
 ]

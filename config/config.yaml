@@ -13,7 +13,7 @@ training_dir: results/training
 evaluation_dir: results/evaluation
 gradcam_dir: results/gradcam
 prediction_dir: results/prediction
-task: binary
+task: multiclass
 source_classes: [glioma, meningioma, notumor, pituitary]
 binary_mapping:
   notumor: 0

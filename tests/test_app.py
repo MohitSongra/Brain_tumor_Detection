@@ -61,7 +61,7 @@ def test_prediction_flow_matches_shared_inference_and_clears_stale_upload(monkey
     from pathlib import Path
     from src import predict
     config = app_config(monkeypatch, tmp_path)
-    config.update(cnn_filters=[4, 8, 16], dense_units=8)
+    config.update(cnn_filters=[4, 8, 16], dense_units=8, task="binary")
     Path(config["model_path"]).write_bytes(b"mock readiness marker, not a production model")
     model = build_model(config)
     # Mock a trained bundle contract solely to exercise the rendering branch;
@@ -91,3 +91,34 @@ def test_prediction_flow_matches_shared_inference_and_clears_stale_upload(monkey
     app.run()
     assert not app.exception and len(app.metric) == 0
     assert DISCLAIMER in [element.value for element in app.info]
+
+
+def test_multiclass_prediction_flow(monkeypatch, tmp_path):
+    from pathlib import Path
+    from src import predict
+    config = app_config(monkeypatch, tmp_path)
+    config.update(cnn_filters=[4, 8, 16], dense_units=8, task="multiclass")
+    Path(config["model_path"]).write_bytes(b"mock readiness marker, not a production model")
+    model = build_model(config)
+    metadata = {
+        "task": "multiclass",
+        "class_names": ["glioma", "meningioma", "notumor", "pituitary"],
+        "image_size": 32,
+        "input_range": [0, 255],
+        "threshold": 0.5,
+        "model_name": "isolated_multiclass_fixture",
+        "trained_on_real_data": True,
+        "gradcam_layer": "gradcam_features",
+    }
+    monkeypatch.setattr(predict, "load_model_bundle", lambda path: (model, metadata))
+    current = {"payload": upload_bytes()}
+    monkeypatch.setattr(st, "file_uploader", lambda *args, **kwargs: SimpleNamespace(getvalue=lambda: current["payload"]))
+    expected = predict.predict_image(current["payload"], model, metadata)
+    app = AppTest.from_file(str(ROOT / "app.py"), default_timeout=30).run()
+    assert not app.exception and not app.button[0].disabled
+    app.button[0].click().run()
+    assert not app.exception and not app.error
+    assert len(app.metric) == 2
+    assert app.metric[1].value == f"{expected['confidence']:.2%}"
+    assert app.session_state["prediction"]["class_name"] == expected["class_name"]
+    assert len(app.session_state["prediction"]["probabilities"]) == 4

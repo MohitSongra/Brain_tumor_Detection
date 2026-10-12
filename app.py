@@ -9,6 +9,99 @@ import streamlit as st
 
 from src.utils import DISCLAIMER, configure_runtime, load_config, resolve_path
 
+# -- Tumor type metadata for prediction display and reference gallery -----------
+
+TUMOR_INFO = {
+    "glioma": {
+        "display": "Glioma",
+        "description": (
+            "Gliomas originate from glial cells in the brain or spine. "
+            "On MRI, they typically appear as infiltrative, irregular intra-axial masses, "
+            "often with heterogeneous signal and surrounding edema."
+        ),
+        "icon": "🔴",
+    },
+    "meningioma": {
+        "display": "Meningioma",
+        "description": (
+            "Meningiomas arise from the meninges (protective membranes around the brain). "
+            "On MRI, they appear as well-circumscribed, extra-axial dural-based round or "
+            "lobulated masses with strong, uniform enhancement."
+        ),
+        "icon": "🟠",
+    },
+    "pituitary": {
+        "display": "Pituitary Tumor",
+        "description": (
+            "Pituitary tumors develop in the pituitary gland at the base of the brain (sella turcica). "
+            "On MRI, they appear as rounded sellar/suprasellar masses that may compress the optic chiasm."
+        ),
+        "icon": "🟡",
+    },
+    "notumor": {
+        "display": "No Tumor (Healthy Brain)",
+        "description": "No tumor mass or focal abnormality identified in this MRI scan. Brain structures appear normal and symmetric.",
+        "icon": "🟢",
+    },
+    "no_tumor": {
+        "display": "No Tumor (Healthy Brain)",
+        "description": "No tumor mass or focal abnormality identified in this MRI scan. Brain structures appear normal and symmetric.",
+        "icon": "🟢",
+    },
+    "tumor": {
+        "display": "Tumor Detected",
+        "description": "Tumor pattern identified by classification model.",
+        "icon": "⚠️",
+    },
+}
+
+REFERENCE_IMAGES = {
+    "No Tumor (Normal Brain)": {
+        "images": [
+            "data/sample_images/regular_samples/01_no_tumor.jpg",
+            "data/sample_images/regular_samples/02_no_tumor.jpg",
+        ],
+        "description": (
+            "Healthy brain MRI. Shows symmetrical cerebral hemispheres, normal ventricles, "
+            "and uniform tissue intensity with no mass effect or abnormal lesions."
+        ),
+        "icon": "🟢",
+    },
+    "Glioma": {
+        "images": [
+            "data/sample_images/regular_samples/07_tumor_glioma.jpg",
+            "data/sample_images/regular_samples/08_tumor_glioma.jpg",
+        ],
+        "description": (
+            "Grows within brain tissue (intra-axial). Shows irregular, infiltrative margins, "
+            "heterogeneous core, and often significant surrounding edema (swelling)."
+        ),
+        "icon": "🔴",
+    },
+    "Meningioma": {
+        "images": [
+            "data/sample_images/regular_samples/09_tumor_meningioma.jpg",
+            "data/sample_images/regular_samples/10_tumor_meningioma.jpg",
+        ],
+        "description": (
+            "Arises from outer membranes (extra-axial). Distinct, well-demarcated rounded boundary "
+            "attached to the skull or dural folds, pushing inward on adjacent brain tissue."
+        ),
+        "icon": "🟠",
+    },
+    "Pituitary Tumor": {
+        "images": [
+            "data/sample_images/regular_samples/11_tumor_pituitary.jpg",
+            "data/sample_images/regular_samples/12_tumor_pituitary.jpg",
+        ],
+        "description": (
+            "Located at the skull base in the pituitary fossa (sella turcica). Centrally positioned, "
+            "frequently well-defined, and may extend upward into the suprasellar space."
+        ),
+        "icon": "🟡",
+    },
+}
+
 
 @st.cache_resource(show_spinner=False)
 def load_application_model(path: str, modified: tuple[int, ...]):
@@ -22,8 +115,12 @@ def load_application_model(path: str, modified: tuple[int, ...]):
 
 def main() -> None:
     st.set_page_config(page_title="Brain Tumor Detection", page_icon=":material/neurology:", layout="wide")
-    st.title("Brain Tumor Detection Using Deep Learning")
-    st.write("Explore how a trained image classifier interprets a brain MRI image. Upload an image to see its predicted class, model probabilities, and Grad-CAM visualization.")
+    st.title("Brain Tumor Detection & Classification Using Deep Learning")
+    st.write(
+        "Explore how a deep learning image classifier interprets brain MRI scans. "
+        "This dashboard provides reference visual examples of different brain tumor types "
+        "and allows you to upload an MRI image to obtain specific tumor classification, probabilities, and Grad-CAM interpretability."
+    )
     # Render before any early return so the disclaimer also appears in error states.
     st.info(DISCLAIMER, icon=":material/info:")
     try:
@@ -32,6 +129,26 @@ def main() -> None:
     except (ValueError, FileNotFoundError, RuntimeError, OSError) as error:
         st.error(f"Configuration could not be loaded. {error}")
         return
+
+    # -- Permanent reference gallery: visual guide showing how each tumor looks like --
+    st.divider()
+    st.subheader("Brain Tumor Reference Guide (Visual Comparison)")
+    st.caption(
+        "Reference MRI examples illustrating visual characteristics of healthy brain tissue versus "
+        "the 3 primary tumor types before performing automated predictions."
+    )
+    gallery_cols = st.columns(4, gap="medium")
+    for gallery_col, (tumor_name, ref_info) in zip(gallery_cols, REFERENCE_IMAGES.items()):
+        with gallery_col:
+            with st.container(border=True):
+                st.markdown(f"**{ref_info['icon']} {tumor_name}**")
+                for img_path in ref_info["images"]:
+                    resolved = resolve_path(img_path, config)
+                    if resolved.is_file():
+                        st.image(str(resolved), caption=resolved.stem.replace("_", " ").title(), width="stretch")
+                st.caption(ref_info["description"])
+    st.divider()
+
     model_path = resolve_path(config["model_path"], config)
     ready = model_path.is_file()
     bundle_paths = [model_path, model_path.parent / "metadata.json", model_path.parent / "class_names.json"]
@@ -93,20 +210,34 @@ def main() -> None:
             logging.exception("Application prediction failed")
     result = st.session_state.get("prediction")
     with right:
-        st.subheader("Prediction")
+        st.subheader("Prediction Result")
         if result is None:
             st.write("Your result will appear here after you upload an image and select Predict.")
             st.caption("The classifier does not verify that an uploaded image is an MRI or determine whether it is suitable for this model.")
         else:
-            label = result["class_name"].replace("_", " ").replace("notumor", "no tumor").title()
+            raw_class = result["class_name"]
+            info = TUMOR_INFO.get(raw_class, {})
+            display_name = info.get("display", raw_class.replace("_", " ").replace("notumor", "no tumor").title())
+            icon = info.get("icon", "")
+            is_tumor = raw_class not in {"notumor", "no_tumor"}
+
+            if is_tumor:
+                st.error(f"**Tumor Detected: {display_name}**")
+            else:
+                st.success(f"**No Tumor Detected ({display_name})**")
+
             with st.container(border=True):
-                st.metric("Predicted class", label)
+                st.metric("Specific Classification", f"{icon} {display_name}".strip())
                 st.metric("Confidence", f"{result['confidence']:.2%}")
+                if info.get("description"):
+                    st.caption(f"**About this class:** {info['description']}")
                 st.caption("Confidence is an uncalibrated model probability, not a measure of clinical certainty.")
             st.subheader("Class probabilities")
             for name, probability in zip(result["class_names"], result["probabilities"]):
-                display = name.replace("_", " ").replace("notumor", "no tumor").title()
-                st.progress(float(probability), text=f"{display}: {probability:.2%}")
+                c_info = TUMOR_INFO.get(name, {})
+                c_display = c_info.get("display", name.replace("_", " ").replace("notumor", "no tumor").title())
+                c_icon = c_info.get("icon", "")
+                st.progress(float(probability), text=f"{c_icon} {c_display}: {probability:.2%}".strip())
             if len(result["class_names"]) == 2:
                 st.caption(f"Tumor decision threshold: {result['threshold']:.2f}")
             st.download_button("Download prediction", json.dumps(result, indent=2), file_name="prediction.json", mime="application/json")

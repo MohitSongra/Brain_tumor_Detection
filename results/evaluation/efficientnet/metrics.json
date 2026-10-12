@@ -1,79 +1,123 @@
 {
-  "accuracy": 0.9336043360433605,
-  "precision": 0.9959432048681541,
-  "recall": 0.912639405204461,
-  "sensitivity": 0.912639405204461,
-  "specificity": 0.99,
-  "f1": 0.9524733268671193,
-  "roc_auc": 0.9849767657992564,
-  "task": "binary",
+  "accuracy": 0.7859078590785907,
+  "precision": 0.7828339051706515,
+  "recall": 0.7686180983166843,
+  "sensitivity": 0.7686180983166843,
+  "specificity": 0.9289044055338966,
+  "f1": 0.7623384569480315,
+  "roc_auc": 0.9383152705946252,
+  "task": "multiclass",
   "class_names": [
-    "no_tumor",
-    "tumor"
+    "glioma",
+    "meningioma",
+    "notumor",
+    "pituitary"
   ],
   "threshold": 0.5,
   "n_samples": 1476,
-  "positive_class": "tumor",
-  "averaging": "positive_class",
+  "positive_class": null,
+  "averaging": "macro",
   "per_class": {
-    "no_tumor": {
-      "precision": 0.8081632653061225,
-      "recall": 0.99,
-      "sensitivity": 0.99,
-      "specificity": 0.912639405204461,
-      "f1": 0.8898876404494382,
-      "roc_auc": 0.9849767657992565,
-      "support": 400,
-      "tp": 396,
-      "tn": 982,
-      "fp": 94,
-      "fn": 4
+    "glioma": {
+      "precision": 0.9139344262295082,
+      "recall": 0.5822454308093995,
+      "sensitivity": 0.5822454308093995,
+      "specificity": 0.9807868252516011,
+      "f1": 0.7113237639553429,
+      "roc_auc": 0.9181499167500757,
+      "support": 383,
+      "tp": 223,
+      "tn": 1072,
+      "fp": 21,
+      "fn": 160
     },
-    "tumor": {
-      "precision": 0.9959432048681541,
-      "recall": 0.912639405204461,
-      "sensitivity": 0.912639405204461,
-      "specificity": 0.99,
-      "f1": 0.9524733268671193,
-      "roc_auc": 0.9849767657992564,
-      "support": 1076,
-      "tp": 982,
-      "tn": 396,
-      "fp": 4,
-      "fn": 94
+    "meningioma": {
+      "precision": 0.6051660516605166,
+      "recall": 0.5597269624573379,
+      "sensitivity": 0.5597269624573379,
+      "specificity": 0.9095519864750634,
+      "f1": 0.5815602836879432,
+      "roc_auc": 0.8623416488998006,
+      "support": 293,
+      "tp": 164,
+      "tn": 1076,
+      "fp": 107,
+      "fn": 129
+    },
+    "notumor": {
+      "precision": 0.8366445916114791,
+      "recall": 0.9475,
+      "sensitivity": 0.9475,
+      "specificity": 0.9312267657992565,
+      "f1": 0.8886283704572099,
+      "roc_auc": 0.9828624535315985,
+      "support": 400,
+      "tp": 379,
+      "tn": 1002,
+      "fp": 74,
+      "fn": 21
+    },
+    "pituitary": {
+      "precision": 0.7755905511811023,
+      "recall": 0.985,
+      "sensitivity": 0.985,
+      "specificity": 0.8940520446096655,
+      "f1": 0.8678414096916299,
+      "roc_auc": 0.9899070631970261,
+      "support": 400,
+      "tp": 394,
+      "tn": 962,
+      "fp": 114,
+      "fn": 6
     }
   },
   "macro": {
-    "precision": 0.9020532350871383,
-    "recall": 0.9513197026022304,
-    "sensitivity": 0.9513197026022304,
-    "specificity": 0.9513197026022304,
-    "f1": 0.9211804836582788,
-    "roc_auc": 0.9849767657992565
+    "precision": 0.7828339051706515,
+    "recall": 0.7686180983166843,
+    "sensitivity": 0.7686180983166843,
+    "specificity": 0.9289044055338966,
+    "f1": 0.7623384569480315,
+    "roc_auc": 0.9383152705946252
   },
   "weighted": {
-    "precision": 0.9450543323581184,
-    "recall": 0.9336043360433605,
-    "sensitivity": 0.9336043360433605,
-    "specificity": 0.9690350691611006,
-    "f1": 0.9355124362390215,
-    "roc_auc": 0.9849767657992564
+    "precision": 0.7942036554874428,
+    "recall": 0.7859078590785907,
+    "sensitivity": 0.7859078590785907,
+    "specificity": 0.9297097630569955,
+    "f1": 0.7760312173272355,
+    "roc_auc": 0.9440551002265383
   },
   "confusion_matrix": [
     [
-      396,
-      4
+      223,
+      91,
+      30,
+      39
     ],
     [
-      94,
-      982
+      18,
+      164,
+      41,
+      70
+    ],
+    [
+      2,
+      14,
+      379,
+      5
+    ],
+    [
+      1,
+      2,
+      3,
+      394
     ]
   ],
   "undefined_metric_policy": "null; macro is null if any class is undefined; weighted ignores only zero-support classes",
-  "evaluated_at_utc": "2026-09-21T18:18:58.510112+00:00",
+  "evaluated_at_utc": "2026-10-12T18:55:15.066831+00:00",
   "model_name": "efficientnet",
-  "model_path": "models/saved/best_model.keras",
-  "model_sha256": "0281f01718b16ba39be696d4c3ab3dadab461195698acd74cfc4f973b8dd64f8",
+  "model_path": "models/saved/efficientnet/best_model.keras",
+  "model_sha256": "e4c630e04f3d19687339a0062026b96502ad38ce7ebe931f77110e20e0628d23",
   "dataset_fingerprint": "7cbfdfaf4cb792140f3144366a6f56b31d0d1ecd8a866e6d4749dd874927715a",
   "trained_on_real_data": true,
   "evaluation_split": "test",
